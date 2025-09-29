@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Style Haven</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Style Haven</div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="products">
+    <h2>Our Collection</h2>
+    <div class="product-slider">
+
+      <!-- Example product card -->
+      <div class="product-card">
+        <img src="clothes-photo/tshirt.jpeg" alt="Casual T-Shirt">
+        <h3>Casual T-Shirt</h3>
+        <p>Lightweight cotton t-shirt for everyday wear.</p>
+        <span>৳1,200</span>
+        <button onclick="addToCart('Casual T-Shirt', 1200)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="clothes-photo/jacket.jpeg" alt="Denim Jacket">
+        <h3>Denim Jacket</h3>
+        <p>Classic denim jacket with modern fit and comfort.</p>
+        <span>৳3,500</span>
+        <button onclick="addToCart('Denim Jacket', 3500)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="clothes-photo/formalshirt.jpeg" alt="Formal Shirt">
+        <h3>Formal Shirt</h3>
+        <p>Elegant formal shirt suitable for work or events.</p>
+        <span>৳2,500</span>
+        <button onclick="addToCart('Formal Shirt', 2500)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="clothes-photo/tracksuit.jpeg" alt="Tracksuit">
+        <h3>Tracksuit</h3>
+        <p>Comfortable tracksuit for sports and casual wear.</p>
+        <span>৳4,000</span>
+        <button onclick="addToCart('Tracksuit', 4000)">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Style Haven. All rights reserved.</p>
+  </footer>
+</body>
+</html>

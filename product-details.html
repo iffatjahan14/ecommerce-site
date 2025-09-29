@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Style Haven</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar centered">
+      <div class="logo">Style Haven</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="products">
+    <div class="product-card" id="product-card">
+      <!-- Product info will be populated dynamically -->
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Style Haven. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Read product parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get('product');
+
+    const productData = {
+      "T-Shirt": {
+        img: "clothes-photo/tshirt.jpeg",
+        title: "Classic T-Shirt",
+        desc: "Comfortable cotton T-shirt for everyday wear.",
+        price: 1299
+      },
+      "Jacket": {
+        img: "clothes-photo/jacket.jpeg",
+        title: "Leather Jacket",
+        desc: "Stylish and warm leather jacket for all seasons.",
+        price: 5499
+      },
+      "Jeans": {
+        img: "clothes-photo/jeans.jpeg",
+        title: "Blue Jeans",
+        desc: "Classic blue jeans with perfect fit and comfort.",
+        price: 2299
+      },
+      "Dress": {
+        img: "clothes-photo/dress.jpeg",
+        title: "Summer Dress",
+        desc: "Lightweight and elegant summer dress for every occasion.",
+        price: 3499
+      }
+    };
+
+    const card = document.getElementById('product-card');
+    if(productData[product]){
+      card.innerHTML = `
+        <img src="${productData[product].img}" alt="${productData[product].title}">
+        <h2>${productData[product].title}</h2>
+        <p>${productData[product].desc}</p>
+        <span>৳${productData[product].price}</span><br><br>
+        <button onclick="addToCart('${productData[product].title}', ${productData[product].price})">Add to Cart</button>
+      `;
+    } else {
+      card.innerHTML = "<p>Product not found.</p>";
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
